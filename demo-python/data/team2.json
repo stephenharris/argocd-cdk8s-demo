@@ -1,0 +1,8 @@
+{
+    "name": "bar",
+    "slack": "#bar",
+    "namespaces": [
+        "hello",
+        "world"
+    ]
+}
