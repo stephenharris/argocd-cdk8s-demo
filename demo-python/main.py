@@ -28,17 +28,9 @@ class MyChart(Chart):
                         )
                     )                
 
-        k8s.KubeService(self, 'service',
-            spec=k8s.ServiceSpec(
-                type='LoadBalancer',
-                ports=[k8s.ServicePort(port=80, target_port=k8s.IntOrString.from_number(8080))],
-                selector=label
-            )
-        )
-
         k8s.KubeDeployment(self, 'deployment',
             spec=k8s.DeploymentSpec(
-                replicas=2,
+                replicas=1,
                 selector=k8s.LabelSelector(match_labels=label),
                 template=k8s.PodTemplateSpec(
                     metadata=k8s.ObjectMeta(labels=label),
