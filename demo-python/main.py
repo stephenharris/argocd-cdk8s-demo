@@ -23,7 +23,7 @@ class MyChart(Chart):
                             name=namespace,
                             annotations={
                                 "owner": team['name'],
-                                "slack-channel": team['slack']
+                                "slack": team['slack']
                             }
                         )
                     )                
